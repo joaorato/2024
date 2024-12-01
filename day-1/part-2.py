@@ -4,11 +4,8 @@ right = []
 with open("input.txt") as file:
     for line in file:
         row = line.split()
-        left.append(row[0])
-        right.append(row[1])
-
-left = [int(item) for item in left]
-right = [int(item) for item in right]
+        left.append(int(row[0]))
+        right.append(int(row[1]))
 
 left.sort()
 right.sort()
