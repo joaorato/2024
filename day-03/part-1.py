@@ -1,4 +1,7 @@
 import re
+import time
+
+start_time = time.time()
 
 matches = []
 with open("input.txt") as file:
@@ -12,4 +15,5 @@ for match in matches:
     num2 = int(nums[1])
     sum += num1 * num2
 
+print("--- %s seconds ---" % (time.time() - start_time))
 print(sum)

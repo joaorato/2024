@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 left = []
 right = []
 
@@ -18,4 +22,5 @@ for l_num in left:
             number_score += 1
     sim_score += l_num * number_score
 
+print("--- %s seconds ---" % (time.time() - start_time))
 print(sim_score)

@@ -1,4 +1,7 @@
 import numpy as np
+import time
+
+start_time = time.time()
 
 levels = []
 
@@ -62,5 +65,5 @@ for row in levels:
                     safe += 1
                     break
 
-
+print("--- %s seconds ---" % (time.time() - start_time))
 print(safe)

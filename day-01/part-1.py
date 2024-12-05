@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 left = []
 right = []
 
@@ -14,4 +18,5 @@ total_distance = 0
 for l_num, r_num in zip(left, right):
     total_distance += abs(l_num - r_num)
 
+print("--- %s seconds ---" % (time.time() - start_time))
 print(total_distance)

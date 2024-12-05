@@ -1,4 +1,7 @@
 import re
+import time
+
+start_time = time.time()
 
 matches = []
 combined_pattern = r"(mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\))"
@@ -20,4 +23,5 @@ for match in matches:
     else:
         enabled = False
 
+print("--- %s seconds ---" % (time.time() - start_time))
 print(sum)

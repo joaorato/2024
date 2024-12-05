@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 lines = []
 with open("input.txt") as file:
     content = file.readlines()
@@ -41,4 +45,5 @@ for i in range(len(lines)):
             if search_in_direction(i, j, di, dj):
                 count += 1
 
+print("--- %s seconds ---" % (time.time() - start_time))
 print(count)
