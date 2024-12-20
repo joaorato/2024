@@ -53,7 +53,9 @@ count = 0
 for point in point_dists:
     for i in range(-20, 21):
         for j in range(-20, 21):
-            if i == j == 0 or abs(i) + abs(j) > 20:
+            # how much it costs to go from point to new_point in a straight line
+            cheat_cost = abs(i) + abs(j)
+            if i == j == 0 or cheat_cost > 20:
                 continue
             new_point = (point[0] + i, point[1] + j)
             # if the new point is in the original path
@@ -61,8 +63,6 @@ for point in point_dists:
                 # how much it costs to go from point to new_point following the original path
                 initial_cost = point_dists[point] - point_dists[new_point]
 
-                # how much it costs to go from point to new_point in a straight line
-                cheat_cost = abs(point[0] - new_point[0]) + abs(point[1] - new_point[1])
                 if (initial_cost - cheat_cost) >= 100:
                     count += 1
 print(count)
